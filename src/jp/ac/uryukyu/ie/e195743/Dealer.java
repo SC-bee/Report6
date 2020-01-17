@@ -1,7 +1,5 @@
 package jp.ac.uryukyu.ie.e195743;
 import java.util.Random;
-import java.util.*;
-import java.io.*;
 public class Dealer {
     int score = 0;
     Random random = new Random();
