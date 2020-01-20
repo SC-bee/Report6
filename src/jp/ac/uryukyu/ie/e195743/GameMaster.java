@@ -1,7 +1,9 @@
 package jp.ac.uryukyu.ie.e195743;
 import java.util.Random;
 import java.io.*;
-
+/**
+ *ゲームマスターのクラス
+ */
 public class GameMaster {
 
     public void Juge(Prayer prayer, Dealer dealer) throws IOException {
@@ -56,7 +58,7 @@ public class GameMaster {
         Win(prayer,dealer);
     }
 
-    public void Win(Prayer prayer, Dealer dealer){
+    public void Win(Prayer prayer, Dealer dealer) {
         System.out.println("ディーラーの点数は" + dealer.score + "です。");
         if (dealer.score > 21 && prayer.score < 22) {
             System.out.println("プレイヤーの勝ち");
@@ -74,5 +76,6 @@ public class GameMaster {
         System.out.println("");
     }
 }
+
 
 

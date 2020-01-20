@@ -1,12 +1,19 @@
 package jp.ac.uryukyu.ie.e195743;
 import java.util.Random;
-import java.util.*;
-import java.io.*;
+/**
+ *プレイヤーのクラス
+ * int score; //プレイヤーの点数
+ * int[] card //引いたカードの配列
+ */
 public class Prayer {
     int score = 0;
     Random random = new Random();
     int[] card =new int[30];
 
+    /**
+     * 2回カードを引くメソッド。
+     * 引いたカードを配列cardに0番目から格納していく。
+     */
     public void BlackJack(){
         for (int i=0;i<2;i++) {
             card[i]=random.nextInt(13)+1;

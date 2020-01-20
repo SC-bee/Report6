@@ -1,12 +1,21 @@
 package jp.ac.uryukyu.ie.e195743;
 import java.util.Random;
+/**
+ *ディーラーのクラス
+ * int score; //ディーラーの点数
+ * int[] card //引いたカードの配列
+ */
 public class Dealer {
     int score = 0;
     Random random = new Random();
-    int[] card =new int[30];
+    int[] card = new int[30];
 
-    public void BlackJack(){
-        for (int i=0;i<2;i++) {
+    /**
+     * 2回カードを引くメソッド。
+     * 引いたカードを配列cardに0番目から格納していく。
+     */
+    public void BlackJack() {
+        for (int i = 0; i < 2; i++) {
             card[i] = random.nextInt(13) + 1;
             if (card[i] >= 10) {
                 card[i] = 10;

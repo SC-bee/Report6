@@ -1,6 +1,8 @@
 package jp.ac.uryukyu.ie.e195743;
 import java.io.*;
-
+/**
+ *メインクラス
+ */
 public class Main {
 
     public static void main(String[] args) throws IOException {
