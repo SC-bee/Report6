@@ -6,13 +6,13 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * 2番目に引いたカードがcard配列に反映されていることを確認。
  */
-class PrayerTest {
+class PlayerTest {
 
     @Test
     void blackJack() {
-        Prayer prayer = new Prayer();
-        prayer.BlackJack();
-        int x = prayer.card[1];
+        Player player = new Player();
+        player.BlackJack();
+        int x = player.card[1];
         assertNotNull(x);
     }
 }

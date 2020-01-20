@@ -5,7 +5,7 @@ import java.util.Random;
  * int score; //プレイヤーの点数
  * int[] card //引いたカードの配列
  */
-public class Prayer {
+public class Player {
     int score = 0;
     Random random = new Random();
     int[] card =new int[30];

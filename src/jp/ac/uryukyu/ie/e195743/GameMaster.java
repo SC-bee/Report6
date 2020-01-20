@@ -6,12 +6,12 @@ import java.io.*;
  */
 public class GameMaster {
 
-    public void Juge(Prayer prayer, Dealer dealer) throws IOException {
+    public void Judgment(Player player, Dealer dealer) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Random random = new Random();
-        for (int i = 2; prayer.score < 22; i++) {
-            System.out.println("あなたの点数は" + prayer.score + "です。");
-            if (prayer.score == 21 && i < 3) {
+        for (int i = 2; player.score < 22; i++) {
+            System.out.println("あなたの点数は" + player.score + "です。");
+            if (player.score == 21 && i < 3) {
                 System.out.println("BlackJack!");
             }
             System.out.println("ディーラーの１枚目のカードは" + dealer.card[0] + "です。");
@@ -21,16 +21,16 @@ public class GameMaster {
             String str = br.readLine();
 
             if (str.equals("1")) {
-                prayer.card[i] = random.nextInt(13) + 1;
-                if (prayer.card[i] >= 10) {
-                    prayer.card[i] = 10;
+                player.card[i] = random.nextInt(13) + 1;
+                if (player.card[i] >= 10) {
+                    player.card[i] = 10;
                 }
-                if (prayer.card[i] == 1) {
-                    prayer.card[i] = 11;
+                if (player.card[i] == 1) {
+                    player.card[i] = 11;
                 }
-                prayer.score += prayer.card[i];
-                if (prayer.score >= 22) {
-                    System.out.println("あなたの点数は" + prayer.score + "です。");
+                player.score += player.card[i];
+                if (player.score >= 22) {
+                    System.out.println("あなたの点数は" + player.score + "です。");
                     System.out.println("プレイヤーはバストしました");
                     break;
                 }
@@ -55,22 +55,22 @@ public class GameMaster {
                 break;
             }
         }
-        Win(prayer,dealer);
+        Win(player,dealer);
     }
 
-    public void Win(Prayer prayer, Dealer dealer) {
+    public void Win(Player player, Dealer dealer) {
         System.out.println("ディーラーの点数は" + dealer.score + "です。");
-        if (dealer.score > 21 && prayer.score < 22) {
+        if (dealer.score > 21 && player.score < 22) {
             System.out.println("プレイヤーの勝ち");
-        } else if (dealer.score < 22 && prayer.score > 21) {
+        } else if (dealer.score < 22 && player.score > 21) {
             System.out.println("ディーラーの勝ち");
-        } else if (dealer.score > prayer.score) {
+        } else if (dealer.score > player.score) {
             System.out.println("ディーラーの勝ち");
-        } else if (dealer.score < prayer.score) {
+        } else if (dealer.score < player.score) {
             System.out.println("プレイヤーの勝ち");
-        } else if (dealer.score == prayer.score) {
+        } else if (dealer.score == player.score) {
             System.out.println("引き分け");
-        } else if (dealer.score > 21 && prayer.score > 21) {
+        } else if (dealer.score > 21 && player.score > 21) {
             System.out.println("ディーラーの勝ち");
         }
         System.out.println("");
